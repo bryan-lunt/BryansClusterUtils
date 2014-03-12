@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sort $1 | uniq -c | awk '{print $1"/"$2;}'
+sort $1 | sed 's_/.*__' | uniq -c | awk '{print $1"/"$2;}'
